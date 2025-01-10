@@ -16,7 +16,8 @@ Table des matières
    c02_first_ros2_project_pimped/p02s00_index
    c03_test_your_code/p03s00_index
    c04_collaborate_with_coders/p04s00_index
-
+   a00_infos_indus_projet/a00s00_index
+   
 .. toctree:: 
    :maxdepth: 3
    :caption: Travaux Pratiques
