@@ -4,11 +4,11 @@
    contain the root `toctree` directive.
 
 *******************
-Table des matières
+Introduction
 *******************
 .. toctree:: 
    :maxdepth: 2
 
-   a00d01_prise_en_maim
+   a00d01_prise_en_main
    a00d02_dynamixel
    a00d03_Cartographie

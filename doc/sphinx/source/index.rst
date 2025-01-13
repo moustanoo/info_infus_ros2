@@ -16,7 +16,7 @@ Table des matières
    c02_first_ros2_project_pimped/p02s00_index
    c03_test_your_code/p03s00_index
    c04_collaborate_with_coders/p04s00_index
-   a00_infos_indus_projet/a00d00_index
+   
 
 .. toctree:: 
    :maxdepth: 3
@@ -25,7 +25,12 @@ Table des matières
    p00_pentograph_pencil_holder_with_rpi_and_dynamixel/p50s00_index
    p01_rpi_ubuntu_as_a_ros2_robotic_platform/p51s00_index
 
-
+.. toctree::
+   :maxdepth: 3
+   :caption: Notre documentation - DIENG & DOULIN
+   
+   a00_infos_indus_projet/a00d00_index
+   
 **************************
 Index, figures et tableaux
 **************************
