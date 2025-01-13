@@ -9,3 +9,6 @@ Description mécanique de la plateforme pantographe
 
 .. figure:: resources/img/schema_cinematique.svg
    :align: center
+
+
+

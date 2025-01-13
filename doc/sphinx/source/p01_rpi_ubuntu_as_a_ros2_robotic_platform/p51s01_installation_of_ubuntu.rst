@@ -1,3 +1,4 @@
+.. _insallation_of_ubuntu:
 ############################################
 Installation d'Ubuntu sur le Raspberry Pi 5 
 ############################################

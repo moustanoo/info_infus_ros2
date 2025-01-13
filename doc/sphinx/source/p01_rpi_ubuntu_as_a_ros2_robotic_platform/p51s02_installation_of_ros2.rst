@@ -1,3 +1,4 @@
+.. _installation_of_ros2:
 ###########################################
 Installation de ROS2 sur le Raspberry Pi 5 
 ###########################################

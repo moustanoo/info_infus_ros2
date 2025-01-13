@@ -19,18 +19,13 @@ Table des matières
    
 
 .. toctree:: 
-   :maxdepth: 3
-   :caption: Travaux Pratiques
+   :maxdepth: 4
+   :caption: Travaux Pratiques - DIENG & DOULIN
 
    p00_pentograph_pencil_holder_with_rpi_and_dynamixel/p50s00_index
    p01_rpi_ubuntu_as_a_ros2_robotic_platform/p51s00_index
 
-.. toctree::
-   :maxdepth: 3
-   :caption: Notre documentation - DIENG & DOULIN
-   
-   a00_infos_indus_projet/a00d00_index
-   
+
 **************************
 Index, figures et tableaux
 **************************
