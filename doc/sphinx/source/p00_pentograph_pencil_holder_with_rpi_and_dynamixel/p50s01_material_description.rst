@@ -18,13 +18,13 @@ Voici les composants nécessaires pour ce montage :
       Ensemble des composants nécessaires pour le montage
 
 
-1. **Raspberry Pi 5** : Le cerveau du système, chargé de contrôler les moteurs Dynamixel.
-2. **Raspberry Pi Active Cooler** : Un système de refroidissement actif pour maintenir la température de la Raspberry Pi 5.
-3. **M.2 PCIe Base Unit et SSD 250 Go** : Pour le stockage et l'amélioration des performances du système.
+1. `**Raspberry Pi 5**<https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf>`_ : Le cerveau du système, chargé de contrôler les moteurs Dynamixel.
+2. `**Raspberry Pi Active Cooler**<https://datasheets.raspberrypi.com/cooling/raspberry-pi-active-cooler-product-brief.pdf>`_ : Un système de refroidissement actif pour maintenir la température de la Raspberry Pi 5.
+3. `**M.2 PCIe Base Unit et SSD 250 Go**<https://www.adata.com/upload/downloadfile/Datasheet_SWORDFISH%20PCIe%20Gen3x4%20M.2%20SSD_EN_20201214.pdf>`_ : Pour le stockage et l'amélioration des performances du système.
 4. **Alimentation 27W** : Une alimentation suffisamment puissante pour la Raspberry Pi 5 et les périphériques connectés.
-5. **Starter Set Dynamixel** : Un ensemble de moteurs Dynamixel, un contrôleur et les câbles nécessaires.
+5. `**Starter Set Dynamixel**<https://www.robotis.us/dynamixel-starter-set-us/>`_ : Un ensemble de moteurs Dynamixel, un contrôleur et les câbles nécessaires.
 6. **Câbles et connecteurs** : Pour relier les composants entre eux.
-7. **Carte SD (optionnelle)** : Si vous n'utilisez pas le SSD pour le système d'exploitation.
+7. **Carte SD (optionnelle)** : Pour remplacer la SSD pour le système d'exploitation si besoin.
 
 Notice de Montage
 -----------------
