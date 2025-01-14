@@ -7,12 +7,12 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pantographe de dessin robotisé avec Raspberry Pi et ROS2 &mdash; Documentation Cours d&#39;Informatique Industrielle avec ROS2 1.0.0</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=fdcf8bf8" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=814cb336" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -27,7 +27,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Description du matériel de la plateforme pantographe" href="p50s01_material_description.html" />
+    <link rel="next" title="Prise en main du matériel" href="p50s01_material_description.html" />
     <link rel="prev" title="L’outil pre-commit" href="../c04_collaborate_with_coders/p04s10_precommit.html" /> 
 </head>
 
@@ -58,13 +58,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../c03_test_your_code/p03s00_index.html">Tester le code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../c04_collaborate_with_coders/p04s00_index.html">Les outils nécessaires pour collaborer entre codeurs</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Travaux Pratiques</span></p>
+<p class="caption" role="heading"><span class="caption-text">Travaux Pratiques - DIENG &amp; DOULIN</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Pantographe de dessin robotisé avec Raspberry Pi et ROS2</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="p50s01_material_description.html">Description du matériel de la plateforme pantographe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="p50s02_mechanical_description.html">Description mécanique de la plateforme pantographe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="p50s03_urdf.html">Génération de la description URDF du pantographe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#description-du-projet">Description du projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#objectifs-du-projet">Objectifs du projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#table-des-matieres">Table des matières</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="p50s01_material_description.html">Prise en main du matériel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="p50s02_tests_phase.html">Phases de tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="p50s03_mechanical_description.html">Description mécanique de la plateforme pantographe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="p50s04_urdf.html">Génération de la description URDF du pantographe</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../p01_rpi_ubuntu_as_a_ros2_robotic_platform/p51s00_index.html">Ubuntu &amp; RPi &amp; ROS2</a></li>
@@ -96,25 +101,21 @@
              
   <section id="pantographe-de-dessin-robotise-avec-raspberry-pi-et-ros2">
 <h1>Pantographe de dessin robotisé avec Raspberry Pi et ROS2<a class="headerlink" href="#pantographe-de-dessin-robotise-avec-raspberry-pi-et-ros2" title="Lien vers cette rubrique"></a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="p50s01_material_description.html">Description du matériel de la plateforme pantographe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="p50s02_mechanical_description.html">Description mécanique de la plateforme pantographe</a></li>
-<li class="toctree-l1"><a class="reference internal" href="p50s03_urdf.html">Génération de la description URDF du pantographe</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="p50s03_urdf.html#extraction-des-modeles-3d-en-step">Extraction des modèles 3D en step</a></li>
-<li class="toctree-l2"><a class="reference internal" href="p50s03_urdf.html#conversion-des-modeles-3d-en-collada">Conversion des modèles 3D en collada</a></li>
-<li class="toctree-l2"><a class="reference internal" href="p50s03_urdf.html#creation-du-fichier-urdf">Création du fichier URDF</a></li>
-</ul>
-</li>
-</ul>
-</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
+<p>Ce projet a pour objectif de manipuler un pantographe développé par l’école.
+Pour cela on s’appuiera sur deux éléments clés, des moteurs Dynamixel et un système de contrôle  réalisé avec l’aide d’une Raspberry Pi 5.
+Les moteurs Dynamixel sont des actionneurs intelligents largement utilisés en robotique pour leur précision, leur flexibilité et leur facilité de communication.
+La Raspberry Pi 5, grâce à sa puissance de calcul et ses interfaces de communication, est un choix idéal pour piloter ces moteurs.
+Ce montage inclut également des composants supplémentaires pour optimiser les performances et la gestion de l’alimentation.</p>
 <figure class="align-center">
 <img alt="../_images/real_system_photo.png" src="../_images/real_system_photo.png" />
 </figure>
-<section id="description-du-projet">
-<h2>Description du projet<a class="headerlink" href="#description-du-projet" title="Lien vers cette rubrique"></a></h2>
-<p>Pour ce travail pratique, vous allez installer une plateforme robotique ROS2 sur un Raspberry Pi (Pi5) et documenter le projet.
-Le projet consiste donc à:</p>
+</section>
+<section id="objectifs-du-projet">
+<h2>Objectifs du projet<a class="headerlink" href="#objectifs-du-projet" title="Lien vers cette rubrique"></a></h2>
+<p>Dans ce cadre où nous allons installer une plateforme robotique ROS2 sur un Raspberry Pi (Pi5), contrôler un ensemble de moteurs  et documenter le projet, un ensemble d’objectifs ont été fixés.
+Initiallement nous devions:</p>
 <ol class="arabic simple">
 <li><p>installer Ubuntu sur le Raspberry Pi,</p></li>
 <li><p>installer ROS2,</p></li>
@@ -125,9 +126,39 @@ Le projet consiste donc à:</p>
 <li><p>Tester en simulation avec Gazebo et RViz</p></li>
 <li><p>Tester en réel avec le pantographe</p></li>
 </ol>
-<p>La documentation correspondra à un fork de ce projet et sera publiée sur votre github.
-Dans ce projet un canevas de documentation est fourni. Vous devrez le compléter et le publier.
-Vous soumettrez votre travail sous forme de push request à ce projet.</p>
+<p>Dû à des contraintes de temps, de matériels et des problèmes informatiques, nous avons dû réduire le scope du projet. Nous avons donc décidé de nous concentrer sur les points suivants:</p>
+<ol class="arabic simple">
+<li><p>installer Ubuntu sur le Raspberry Pi,</p></li>
+<li><p>installer ROS2,</p></li>
+<li><p>tester et documenter les tests de l’installation système</p></li>
+<li><p>Créer des tests et documenter les tests</p></li>
+</ol>
+</section>
+<section id="table-des-matieres">
+<h2>Table des matières<a class="headerlink" href="#table-des-matieres" title="Lien vers cette rubrique"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="p50s01_material_description.html">Prise en main du matériel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="p50s01_material_description.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p50s01_material_description.html#liste-des-composants">Liste des Composants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p50s01_material_description.html#notice-de-montage">Notice de Montage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="p50s02_tests_phase.html">Phases de tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="p50s02_tests_phase.html#utilisation-des-moteurs-dynamixel">Utilisation des moteurs Dynamixel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="p50s03_mechanical_description.html">Description mécanique de la plateforme pantographe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="p50s04_urdf.html">Génération de la description URDF du pantographe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="p50s04_urdf.html#extraction-des-modeles-3d-en-step">Extraction des modèles 3D en step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p50s04_urdf.html#conversion-des-modeles-3d-en-collada">Conversion des modèles 3D en collada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p50s04_urdf.html#clonage-du-dossier-scara">Clonage du dossier Scara</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p50s04_urdf.html#creation-du-fichier-urdf">Création du fichier URDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p50s04_urdf.html#resultats">Résultats</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </section>
 </section>
 
@@ -136,13 +167,13 @@ Vous soumettrez votre travail sous forme de push request à ce projet.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="../c04_collaborate_with_coders/p04s10_precommit.html" class="btn btn-neutral float-left" title="L’outil pre-commit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="p50s01_material_description.html" class="btn btn-neutral float-right" title="Description du matériel de la plateforme pantographe" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="p50s01_material_description.html" class="btn btn-neutral float-right" title="Prise en main du matériel" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Manuel YGUEL.</p>
+    <p>&#169; Droits d'auteur 2024, Manuel YGUEL.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un

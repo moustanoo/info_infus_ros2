@@ -7,13 +7,13 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Publier la documentation &mdash; Documentation Cours d&#39;Informatique Industrielle avec ROS2 1.0.0</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
       <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=fdcf8bf8" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=814cb336" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -80,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../c03_test_your_code/p03s00_index.html">Tester le code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../c04_collaborate_with_coders/p04s00_index.html">Les outils nécessaires pour collaborer entre codeurs</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Travaux Pratiques</span></p>
+<p class="caption" role="heading"><span class="caption-text">Travaux Pratiques - DIENG &amp; DOULIN</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../p00_pentograph_pencil_holder_with_rpi_and_dynamixel/p50s00_index.html">Pantographe de dessin robotisé avec Raspberry Pi et ROS2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../p01_rpi_ubuntu_as_a_ros2_robotic_platform/p51s00_index.html">Ubuntu &amp; RPi &amp; ROS2</a></li>
@@ -238,7 +238,7 @@ touch<span class="w"> </span>.github/workflows/documentation.yml
 <span class="linenos"> 4</span><span class="nt">on</span><span class="p">:</span>
 <span class="linenos"> 5</span><span class="w">  </span><span class="c1"># Triggers the workflow on push or pull request events but only for the master branch</span>
 <span class="linenos"> 6</span><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
-<span class="linenos"> 7</span><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">rolling</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">matthieu</span><span class="w"> </span><span class="p p-Indicator">]</span>
 <span class="linenos"> 8</span>
 <span class="linenos"> 9</span><span class="w">  </span><span class="c1"># Allows you to run this workflow manually from the Actions tab</span>
 <span class="linenos">10</span><span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
@@ -271,7 +271,7 @@ touch<span class="w"> </span>.github/workflows/documentation.yml
 <span class="linenos">37</span><span class="w">            </span><span class="no">cd ../..</span>
 <span class="linenos">38</span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create commit</span>
 <span class="linenos">39</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="hll"><span class="linenos">40</span><span class="w">            </span><span class="no">git clone https://github.com/yguel/informatique_industrielle_avec_ROS2.git --branch gh-pages --single-branch gh-pages</span>
+<span class="hll"><span class="linenos">40</span><span class="w">            </span><span class="no">git clone https://github.com/moustanoo/info_infus_ros2.git --branch gh-pages --single-branch gh-pages</span>
 </span><span class="linenos">41</span><span class="w">            </span><span class="no">mkdir -p gh-pages/docs/</span>
 <span class="linenos">42</span><span class="w">            </span><span class="no">cp -r ./doc/sphinx/build/html/* gh-pages/</span>
 <span class="linenos">43</span><span class="w">            </span><span class="no">cd gh-pages</span>
@@ -354,7 +354,7 @@ git<span class="w"> </span>push
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Manuel YGUEL.</p>
+    <p>&#169; Droits d'auteur 2024, Manuel YGUEL.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un

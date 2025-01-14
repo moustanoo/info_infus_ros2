@@ -2,22 +2,27 @@
 Pantographe de dessin robotisé avec Raspberry Pi et ROS2
 #########################################################
 
-.. toctree::
-   :maxdepth: 2
+=====================
+Introduction
+=====================
 
-   p50s01_material_description
-   p50s02_mechanical_description
-   p50s03_urdf
+Ce projet a pour objectif de manipuler un pantographe développé par l'école. 
+Pour cela on s'appuiera sur deux éléments clés, des moteurs Dynamixel et un système de contrôle  réalisé avec l'aide d'une Raspberry Pi 5. 
+Les moteurs Dynamixel sont des actionneurs intelligents largement utilisés en robotique pour leur précision, leur flexibilité et leur facilité de communication. 
+La Raspberry Pi 5, grâce à sa puissance de calcul et ses interfaces de communication, est un choix idéal pour piloter ces moteurs. 
+Ce montage inclut également des composants supplémentaires pour optimiser les performances et la gestion de l'alimentation.
+
+
 
 .. figure:: resources/img/real_system_photo.png
    :align: center
 
 =====================
-Description du projet
+Objectifs du projet
 =====================
 
-Pour ce travail pratique, vous allez installer une plateforme robotique ROS2 sur un Raspberry Pi (Pi5) et documenter le projet.
-Le projet consiste donc à:
+Dans ce cadre où nous allons installer une plateforme robotique ROS2 sur un Raspberry Pi (Pi5), contrôler un ensemble de moteurs  et documenter le projet, un ensemble d'objectifs ont été fixés. 
+Initiallement nous devions:
 
 #. installer Ubuntu sur le Raspberry Pi, 
 #. installer ROS2, 
@@ -28,6 +33,20 @@ Le projet consiste donc à:
 #. Tester en simulation avec Gazebo et RViz
 #. Tester en réel avec le pantographe
 
-La documentation correspondra à un fork de ce projet et sera publiée sur votre github.
-Dans ce projet un canevas de documentation est fourni. Vous devrez le compléter et le publier.
-Vous soumettrez votre travail sous forme de push request à ce projet.
+Dû à des contraintes de temps, de matériels et des problèmes informatiques, nous avons dû réduire le scope du projet. Nous avons donc décidé de nous concentrer sur les points suivants:
+
+#. installer Ubuntu sur le Raspberry Pi, 
+#. installer ROS2, 
+#. tester et documenter les tests de l'installation système
+#. Créer des tests et documenter les tests
+
+=====================
+Table des matières 
+=====================
+.. toctree::
+   :maxdepth: 2
+
+   p50s01_material_description
+   p50s02_tests_phase
+   p50s03_mechanical_description
+   p50s04_urdf
