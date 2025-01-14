@@ -17,11 +17,6 @@ Il s'agit d'un assemblage comportant 5 pièces principales :
 
 :download:`maquette-5-barres_asm.stp <resources/cad/maquette-5-barres_asm.stp>`
 
-Du point de vue URDF, nous aurons aussi besoin de définir l'outil de travail: le crayon et donc de le référencer par rapport à son support qui se trouve être sur l'avant bras gauche du pentographe (``link2``).
-
-Dans un fichier URDF, les modèles 3D sont utilisés à partir de fichiers collada (extension .dae).
-Il va donc falloir convertir notre modèle 3D au format step en un ensemble de 5 modèles 3D au format collada.
-
 ==================================
 Extraction des modèles 3D en step
 ==================================
@@ -38,7 +33,7 @@ Pour extraire les modèles 3D au format step, vous pouvez utiliser le logiciel f
 Conversion des modèles 3D en collada
 =====================================
 
-Pour convertir les modèles 3D en collada (dae), vous pouvez utiliser le logiciel freecad.
+Il faut donc télécharger ses fichiers .dae pour modeliser la pentographe
    
    #. :download:`base.dae <resources/cad/base.dae>`
    #. :download:`link1.dae <resources/cad/link1.dae>`
@@ -47,7 +42,142 @@ Pour convertir les modèles 3D en collada (dae), vous pouvez utiliser le logicie
    #. :download:`link4.dae <resources/cad/link4.dae>`
 
 =========================
+Clonage du dossier Scara
+=========================
+
+Il faut cloner le dossier scara sur le git du prof avec le lien suivant : 
+
+.. code-block:: bash
+
+   git clone https://github.com/yguel/scara_tutorial_ros2.git
+
+Il faut maintenant modifier le fichier ``scara.urdf`` qui se trouve à l'emplacement ~/Scara_tuto_ros2/scara_description/urdf
+
+.. code-block:: bash
+
+   cd ~/Scara_tuto_ros2/scara_description/urdf
+
+Il faut aussi remplacer le code du fichier ``scara.urdf`` par le code suivant : 
+
+.. code-block:: bash
+
+   <robot name="test_dae">
+  <!-- Base fixe -->
+  <link name="base">
+    <visual>
+      <geometry>
+        <mesh filename="base.dae"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+    </visual>
+  </link>
+
+   <robot name="test_dae">
+  <!-- Base fixe -->
+  <link name="base">
+    <visual>
+      <geometry>
+        <mesh filename="base.dae"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+    </visual>
+  </link>
+
+  <!-- Link 1 -->
+  <link name="link1">
+    <visual>
+      <geometry>
+        <mesh filename="link1.dae"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+    </visual>
+  </link>
+
+  <!-- Revolute 1 -->
+  <joint name="Revolute1" type="revolute">
+    <parent link="base"/>
+    <child link="link1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!--  Link 2 -->
+  <link name="link2">
+    <visual>
+      <geometry>
+        <mesh filename="link2.dae"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+    </visual>
+  </link>
+
+  <!-- Revolute 2 -->
+  <joint name="Revolute2" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- Link 3 -->
+  <link name="link3">
+    <visual>
+      <geometry>
+        <mesh filename="link3.dae"/>
+      </geometry>
+    
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+    </visual>
+  </link>
+
+  <!-- Revolute 3 -->
+  <joint name="Revolute3" type="revolute">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- Link4 -->
+  <link name="link4">
+    <visual>
+      <geometry>
+        <mesh filename="link4.dae"/>
+      </geometry>
+       <material name = "green"/>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+    </visual>
+  </link>
+
+  <!-- Revolute 4 -->
+  <joint name="Revolute4" type="revolute">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+
+    <axis xyz="0 0 1"/>
+  </joint>
+  
+  </robot>
+
+Tous les fichiers .dae doivent etre dans le meme repertoire que le fichier scara.
+
+=========================
 Création du fichier URDF
 =========================
 
-Dans un fichier URDF les modèles 3D sont référencés par des balises ``<mesh>``.
+Pour importer la géometrie de chaque composant, il faut utiliser la commande ``<mesh>``.
+
+=========================
+Résultats
+=========================
+Pour visualiser le modèle, il faut télécharger sur ``<VS Code>`` : Urdf visualiser :
+
+.. figure:: resources/img/urdf.png
+   :align: center
+
+.. figure:: resources/img/urdf2.png
+   :align: center
+Représentation mécanique du pantographe dans un fichier URDF.
