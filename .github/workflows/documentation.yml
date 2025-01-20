@@ -4,7 +4,7 @@ name: Documentation
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ rolling ]
+    branches: [ matthieu ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -37,7 +37,7 @@ jobs:
             cd ../..
       - name: Create commit
         run: |
-            git clone https://github.com/yguel/informatique_industrielle_avec_ROS2.git --branch gh-pages --single-branch gh-pages
+            git clone https://github.com/moustanoo/info_infus_ros2.git --branch gh-pages --single-branch gh-pages
             mkdir -p gh-pages/docs/
             cp -r ./doc/sphinx/build/html/* gh-pages/
             cd gh-pages
